@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Grom Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <nav id="navBar" class="container">
+      <button id="viewHigh">View High Scores!</button>
+      <button id="playGame" class="hide">Play Game!</button>
+      <div class="timerContainer">Time: <span id="timeVal">10</span></div>
+    </nav>
+
+    <div id="startWindow" class="container">
+      <h2>This is a big question?</h2>
+      <button id="startGame">Start</button>
+    </div>
+
+    <div id="gameWindow" class="container hide">
+      <h5 id="question">SomeQuestion</h5>
+      <button class="option">Option1</button>
+      <button class="option">Option2</button>
+      <button class="option">Option3</button>
+      <button class="option">Option4</button>
+      <hr />
+      <div id="message">Correct</div>
+    </div>
+
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+.option {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+#navBar {
+  display: flex;
+}
+.timerContainer {
+  margin-left: auto;
+}
+.container {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
