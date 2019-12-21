@@ -6,11 +6,13 @@ var gameWindow = document.getElementById("gameWindow");
 var startWindow = document.getElementById("startWindow");
 
 var optionBtns = document.getElementsByClassName("option");
-// for(var i in optionBtns){
-//   optionBtns[i].onclick = function(){
-//     console.log(this)
-//   }
-// }
+
+var timeEl = document.querySelector("#timeVal");
+
+var timerInterval;
+
+var secondsLeft = 60;
+
 for (var item of optionBtns) {
   item.onclick = optionClick;
 }
@@ -20,8 +22,23 @@ function startGame() {
   startWindow.classList.toggle("hide");
   gameWindow.classList.toggle("hide");
   loadQuestion();
+  setTime();
 }
+
+function setTime() {
+  timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left.";
+
+    if (secondsLeft === 0) {
+      clearInterval(timerInterval);
+      // run function to stop game
+    }
+  }, 1000);
+}
+
 function loadQuestion() {
+  // clearMessage();
   console.log(questions[qIndex]);
   document.getElementById("question").textContent = questions[qIndex].title;
   for (var i in optionBtns) {
@@ -30,9 +47,9 @@ function loadQuestion() {
 }
 function optionClick() {
   if (this.textContent === questions[qIndex].answer) {
-    console.log("Correct");
+    document.getElementById("message").textContent = "Correct";
   } else {
-    console.log("Incorrrect");
+    document.getElementById("message").textContent = "incorrect";
   }
 
   qIndex++;
@@ -42,3 +59,7 @@ function optionClick() {
     // end game!
   }
 }
+
+// function clearMessage() {
+//   document.getElementById("message").textContent = "";
+// }
